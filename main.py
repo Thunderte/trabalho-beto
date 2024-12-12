@@ -1,4 +1,5 @@
-from database.main import criarBancoETabelas, criarUmAluno
+from database.main import criarBancoETabelas,pesquisarAlunos, criarUmAluno
+from controllers.alunoscontroller import criarAluno
 
 
-criarUmAluno
+print(criarAluno())
