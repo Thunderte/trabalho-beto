@@ -1,7 +1,7 @@
 
 import sqlite3
 
-def criarUmAluno(nome: str, matricula: str, data_nascimento: str, sexo: str, endereco: str, telefone: str, email: str):
+def criarUmAluno(nome: str, matricula: str, data_nascimento: str, sexo: str, endereco: str, telefone: str, email: str) -> str:
    conexao = sqlite3.connect("escola.db");
     
    conn = conexao.cursor()
