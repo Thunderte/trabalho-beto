@@ -1,6 +1,6 @@
 from utils.formatador import formartarTelefone
 from utils.matricula import gerarMatricula
-from database.main import criarUmAluno
+from models.aluno import criarUmAluno
 
 def criarAluno():
     print('------------ INFORMAÇÕES PESSOAIS ------------')
