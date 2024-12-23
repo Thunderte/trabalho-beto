@@ -57,11 +57,10 @@ def criarAluno():
     matricula = gerarMatricula();
     
     aluno = criarUmAluno(nome, matricula, dataNascimento, sexo, endereco, telefone, email)
-
-    if aluno:
-        return f"Aluno {nome} criado com sucesso! \n N° da matricula: {matricula}"
-    else:
+    if not aluno:
         raise SystemError("Ops... Ocorreu um erro inesperado")
+    
+    return f"Aluno {nome} criado com sucesso! \n N° da matricula: {matricula}"
 
 
     
