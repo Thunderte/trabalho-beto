@@ -4,7 +4,7 @@ def gerarMatricula():
 
     letrasAlfabeto = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-    numero = random.randint(1, 9999);
+    numero = random.randint(1, 99999);
     letra = random.choice(letrasAlfabeto)
 
     return f"{numero}-{letra}"
