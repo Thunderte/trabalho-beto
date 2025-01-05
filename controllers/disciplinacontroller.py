@@ -15,6 +15,8 @@ def criarDisciplina():
     for i in range(0, len(todosProfessores)):
       professores.append({ 'id': todosProfessores[i][0], 'nome': todosProfessores[i][1] })
 
+    print("Professores disponiveis no IFMS:\n")
+    print("Modelo de impressão: [numero] - [nome]\n")
     for i in range(0, len(professores)):
       print(f"{professores[i]['id']} - {professores[i]['nome']}")
 
