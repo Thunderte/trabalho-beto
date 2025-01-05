@@ -1,6 +1,7 @@
 from utils.formatador import formartarTelefone
 from utils.matricula import gerarMatricula
 from models.aluno import criarUmAluno
+import sqlite3
 
 def criarAluno():
     print('------------ INFORMAÇÕES PESSOAIS ------------')
@@ -62,5 +63,20 @@ def criarAluno():
     
     return f"Aluno {nome} criado com sucesso! \n N° da matricula: {matricula}"
 
-
+def pesquisarAluno():
+    print('------------ PESQUISAR ALUNO ------------')
+    print('\n Bem vindo a Pesquisa de Alunos \n')
+    nome = input("Digite o nome do aluno: ")
+    conexao = sqlite3.connect("escola.db")
+    conn = conexao.cursor()
+    conn.execute("SELECT * FROM alunos WHERE nome = ?", (nome,))
+    resultado = conn.fetchone()
     
+    if resultado:
+        if isinstance(resultado, (list, tuple)):
+            print(f"Nome: {resultado[1]}, Matrrícula: {resultado[2]}")
+        else:
+            print("Resultado inesperado:", resultado)
+    else:
+        print("Aluno não encontrado.")
+

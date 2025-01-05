@@ -1,6 +1,6 @@
-from controllers.alunoscontroller import criarAluno
-from controllers.professorcontroller import criarProfessor
-from controllers.disciplinacontroller import criarDisciplina
+from controllers.alunoscontroller import criarAluno, pesquisarAluno
+from controllers.professorcontroller import criarProfessor, pesquisarProfessor
+from controllers.disciplinacontroller import criarDisciplina, pesquisarDisciplina
 
 def dashboard():
     print('------------ DASHBOARD ------------')
@@ -11,7 +11,10 @@ def dashboard():
         print('1 - Cadastrar aluno\n')
         print('2 - Cadastrar professor\n')
         print('3 - Cadastrar disciplina\n')
-        print('4 - Sair\n')
+        print('4 - Pesquisar Aluno\n')
+        print('5 - Pesquisar Professor\n')
+        print('6 - Pesquisar Disciplina\n')
+        print('7 - Sair\n')
 
         opcao = int(input('Digite a opção desejada: '))
 
@@ -23,6 +26,13 @@ def dashboard():
             elif opcao == 3:
                 criarDisciplina()
             elif opcao == 4:
+                pesquisarAluno()
+            elif opcao == 5:
+                pesquisarProfessor()
+            elif opcao == 6: 
+                pesquisarDisciplina()
+            elif opcao == 7:
+                print('Saindo do servidor...\n')
                 break
             else:
                 print('Opção inválida. Tente novamente.\n')

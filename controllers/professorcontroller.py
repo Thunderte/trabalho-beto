@@ -1,6 +1,7 @@
 from utils.formatador import formartarTelefone
 from utils.codigo import gerarCodigoProfessor
 from models.professor import criarUmProfessor
+import sqlite3
 
 def criarProfessor():
     print('------------ INFORMAÇÕES PESSOAIS ------------')
@@ -29,7 +30,7 @@ def criarProfessor():
 
     sexoInput = str(input("Qual o sexo do professor? (masculino) ou (feminino)\n"))
 
-    sexo = "";
+    sexo = ""
 
     if sexoInput != "masculino" and sexoInput != "Masculino" and sexoInput != "M" and sexoInput != "m" and sexoInput != "feminino" and sexoInput != "Feminino" and sexoInput != "F" and sexoInput != "f":
         print("Error: sexo do professor inválido")
@@ -62,5 +63,22 @@ def criarProfessor():
     
     return f"professor {nome} criado com sucesso! \n N° do código: {codigo}"
 
+def pesquisarProfessor():
+    print('------------ DISCIPLINAS ------------')
+    print('\n Bem vindo ao servidor de cadastro de disciplinas \n')
 
+    nome = input("Digite o nome do professor: ")
+    conexao = sqlite3.connect("escola.db")
+    conn = conexao.cursor()
+    conn.execute("SELECT * FROM professores WHERE nome = ?", (nome,))
+    resultado = conn.fetchone()
+
+    if resultado:
+        if isinstance(resultado, (list, tuple)):
+            print(f"Nome: {resultado[1]}, Matrrícula: {resultado[2]}")
+        else:
+            print("Resultado inesperado:", resultado)
+
+    else:
+        print("Professor nao encontrado.");
     

@@ -1,6 +1,7 @@
 from models.professor import professoresDisponiveis
 from models.professor import pesquisarProfessor
 from models.disciplina import criarUmaDisciplina
+import sqlite3
 
 def criarDisciplina():
     print('------------ DISCIPLINAS ------------')
@@ -33,3 +34,20 @@ def criarDisciplina():
     disciplina = criarUmaDisciplina(nome, professor, cargaHoraria);
 
     return print(disciplina);
+
+def pesquisarDisciplina():
+    print('------------ DISCIPLINAS ------------')
+    print('\n Bem vindo a Pesquisa de Disciplinas \n')
+
+    disciplina = input("Digite o nome da disciplina: ")
+    conexao = sqlite3.connect("escola.db")
+    conn = conexao.cursor()
+    conn.execute("SELECT * FROM disciplinas WHERE nome = ?", (disciplina,))
+    resultado = conn.fetchone()
+
+    if resultado:
+        print("Disciplina foi encontrada:")
+        for disciplina in resultado:
+            print(f"Nome: {disciplina[1]}, Professor: {disciplina[2]}, Carga Horária: {disciplina[3]}")
+    else:
+        print("Disciplina nao encontrada.");
