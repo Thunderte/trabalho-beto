@@ -1,26 +1,33 @@
-def add_discipline(name, id, prof, workload):
-    disciplines.append({'name': name, 'id': id, 'professor': prof, 'workload': workload})
-    return disciplines
+from models.professor import professoresDisponiveis
+from models.professor import pesquisarProfessor
+from models.disciplina import criarUmaDisciplina
 
-disciplines = []
+def criarDisciplina():
+    print('------------ DISCIPLINAS ------------')
+    print('\n Bem vindo ao servidor de cadastro de disciplinas \n')
 
-while True:
-    print('Escolha uma opção')
-    print('1 - Lista das disciplinas')
-    print('2 - Adcionar a lista de disciplinas')
-    print('3 - Sair')
-    option = input('Insita o número da opção desejada: ')
+    nome = str(input("Digite o nome da disciplina para comecar:\n"))
 
-    if option == '1':
-        for discipline in disciplines:
-            print(discipline)
-    elif option == '2':
-        name = input('Digite o nome da disciplina: ')
-        id = int(input('Digite o id da disciplina: '))
-        prof = input('Digite o nome do professor da disciplina: ')
-        workload = int(input('Digite a carga horaria da disciplina: '))
-        add_discipline(name, id, prof, workload)
-    elif option == '3':
-        break
-    else:
-        print('Opção inválida. Tente novamente.')
+    todosProfessores = professoresDisponiveis()
+
+    professores = []
+
+    for i in range(0, len(todosProfessores)):
+      professores.append({ 'id': todosProfessores[i][0], 'nome': todosProfessores[i][1] })
+
+    for i in range(0, len(professores)):
+      print(f"{professores[i]['id']} - {professores[i]['nome']}")
+
+    professor = int(input("Qual o numero do professor da disciplina?\n"))
+
+    professorPesquisado = pesquisarProfessor(professor)
+
+    if(professorPesquisado == None):
+        print('Error: professor não encontrado')
+        exit()
+
+    cargaHoraria = int(input("Qual a carga horária da disciplina?\n"))
+
+    disciplina = criarUmaDisciplina(nome, professor, cargaHoraria);
+
+    return print(disciplina);
