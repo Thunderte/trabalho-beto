@@ -61,7 +61,7 @@ def criarProfessor():
     if not professor:
         raise SystemError("Ops... Ocorreu um erro inesperado")
     
-    return f"professor {nome} criado com sucesso! \n N° do código: {codigo}"
+    return fprint("professor {nome} criado com sucesso! \n N° do código: {codigo}")
 
 def pesquisarProfessor():
     print('------------ DISCIPLINAS ------------')
