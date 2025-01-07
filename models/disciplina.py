@@ -1,13 +1,13 @@
 import sqlite3
 
-def criarUmaDisciplina(nome: str, professor_id: int, carga_horaria: int) -> str:
+def criarUmaDisciplina(nome: str, codigo: str, professor_id: int, carga_horaria: int) -> str:
     conexao = sqlite3.connect("escola.db");
     
     conn = conexao.cursor()
 
-    data = (nome, professor_id, carga_horaria)
+    data = (nome, codigo, professor_id, carga_horaria)
 
-    conn.execute("INSERT INTO disciplinas (nome, professor_id, carga_horaria) VALUES (?, ?, ?)", data)
+    conn.execute("INSERT INTO disciplinas (nome, codigo, professor_id, carga_horaria) VALUES (?, ?, ?)", data)
 
     conexao.commit()
 

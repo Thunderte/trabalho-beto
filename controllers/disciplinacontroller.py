@@ -1,6 +1,7 @@
 from models.professor import professoresDisponiveis
 from models.professor import pesquisarProfessor
 from models.disciplina import criarUmaDisciplina
+from utils.codigo import gerarCodigoDisciplina
 import sqlite3
 
 def criarDisciplina():
@@ -31,7 +32,9 @@ def criarDisciplina():
 
     cargaHoraria = int(input("Qual a carga horária da disciplina?\n"))
 
-    disciplina = criarUmaDisciplina(nome, professor, cargaHoraria);
+    codigo = gerarCodigoDisciplina()
+
+    disciplina = criarUmaDisciplina(nome, codigo, professor, cargaHoraria);
 
     return print(disciplina);
 
