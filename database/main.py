@@ -10,6 +10,7 @@ def criarBancoETabelas():
    conn.execute("CREATE TABLE IF NOT EXISTS disciplinas(id INTEGER PRIMARY KEY AUTOINCREMENT, nome TEXT NOT NULL, codigo, professor_id INTEGER NOT NULL, carga_horaria INTEGER NOT NULL, FOREIGN KEY (professor_id) REFERENCES professores (id))")
    conn.execute("CREATE TABLE IF NOT EXISTS turmas(id INTEGER PRIMARY KEY AUTOINCREMENT, nome TEXT NOT NULL, codigo TEXT NOT NULL)")
    conn.execute("CREATE TABLE IF NOT EXISTS turmas_alunos(turma_id INTEGER NOT NULL, aluno_id INTEGER NOT NULL, FOREIGN KEY (turma_id) REFERENCES turmas (id), FOREIGN KEY (aluno_id) REFERENCES alunos (id))")
+   conn.execute("CREATE TABLE IF NOT EXISTS turmas_disciplinas(turma_id INTEGER NOT NULL, disciplina_id INTEGER NOT NULL, FOREIGN KEY (turma_id) REFERENCES turmas (id), FOREIGN KEY (disciplina_id) REFERENCES disciplinas (id))")
    
    conexao.commit()
    conexao.close()

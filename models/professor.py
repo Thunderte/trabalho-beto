@@ -24,7 +24,7 @@ def professoresDisponiveis() -> str:
 
    return professores
 
-def pesquisarProfessor(id: int) -> str:
+def pesquisarUmProfessor(id: int) -> str:
    conexao = sqlite3.connect("escola.db")
 
    conn = conexao.cursor()
@@ -39,3 +39,19 @@ def pesquisarProfessor(id: int) -> str:
    professor = professores.fetchone()
 
    return professor
+
+def pesquisarDisciplinaDoProfessor(id: int) -> str:
+   conexao = sqlite3.connect("escola.db")
+
+   conn = conexao.cursor()
+
+   disciplinas = conn.execute(f"""
+      SELECT * 
+                              FROM disciplinas
+                              LEFT JOIN professores ON professores.id = disciplinas.professor_id
+                              WHERE professores.id = {id}
+   """)
+
+   disciplina = disciplinas.fetchall()
+
+   return disciplina

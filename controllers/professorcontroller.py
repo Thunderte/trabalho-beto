@@ -1,6 +1,6 @@
 from utils.formatador import formartarTelefone
 from utils.codigo import gerarCodigoProfessor
-from models.professor import criarUmProfessor
+from models.professor import criarUmProfessor, professoresDisponiveis, pesquisarUmProfessor, pesquisarDisciplinaDoProfessor
 import sqlite3
 
 def criarProfessor():
@@ -81,4 +81,29 @@ def pesquisarProfessor():
 
     else:
         print("Professor nao encontrado.");
+
+def disciplinasDoProfessor():
+
+    professores = professoresDisponiveis()
+
+    for i in range(0, len(professores)):
+        print(f"Id: {professores[i][0]} - Nome: {professores[i][1]}")
+
+    professor = int(input("Qual o id do professor que deseja ver as disciplinas?\n"))
+
+    professorPesquisado = pesquisarUmProfessor(professor)
+
+    if not professorPesquisado:
+        print('Error: professor não encontrado')
+        exit()
+
+    disciplinas = pesquisarDisciplinaDoProfessor(professor)
+
+    if not disciplinas:
+        print('Error: disciplinas não encontradas')
+        exit()
     
+    for i in range(0, len(disciplinas)):
+        print(f"Nome: {disciplinas[i][1]} - Código: {disciplinas[i][2]}")
+    
+    return print(f"Disciplinas do professor {professorPesquisado[1]} listadas com sucesso.\n");

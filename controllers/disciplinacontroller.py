@@ -1,5 +1,5 @@
 from models.professor import professoresDisponiveis
-from models.professor import pesquisarProfessor
+from models.professor import pesquisarUmProfessor
 from models.disciplina import criarUmaDisciplina
 from utils.codigo import gerarCodigoDisciplina
 import sqlite3
@@ -24,7 +24,7 @@ def criarDisciplina():
 
     professor = int(input("Qual o numero do professor da disciplina?\n"))
 
-    professorPesquisado = pesquisarProfessor(professor)
+    professorPesquisado = pesquisarUmProfessor(professor)
 
     if(professorPesquisado == None):
         print('Error: professor não encontrado')

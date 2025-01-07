@@ -19,8 +19,19 @@ def pesquisarAlunos(id):
 
    conn = conexao.cursor()
 
-   alunos = conn.execute("SELECT * FROM alunos WHERE id = 1")
+   alunos = conn.execute(f"SELECT * FROM alunos WHERE id = {id}")
 
    aluno = alunos.fetchone()
 
-   return print(aluno)
+   return aluno
+
+def alunosDisponiveis() -> str:
+   conexao = sqlite3.connect("escola.db")
+
+   conn = conexao.cursor()
+
+   alunos = conn.execute("SELECT * FROM alunos")
+
+   alunos = alunos.fetchall()
+
+   return alunos
