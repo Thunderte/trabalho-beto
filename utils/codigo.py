@@ -1,7 +1,11 @@
 import random
 
-def gerarCodigoProfessor():
+def gerarCodigoProfessor() -> str:
+    """_summary_
 
+    Returns:
+        str: Retorna um código gerado aleatoriamente
+    """    
     letrasAlfabeto = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
     numero = random.randint(1, 99999);
@@ -9,7 +13,12 @@ def gerarCodigoProfessor():
 
     return f"{letra}{numero}"
 
-def gerarCodigoDisciplina():
+def gerarCodigoDisciplina() -> str:
+    """_summary_
+
+    Returns:
+        str: Retorna um código gerado aleatoriamente
+    """    
     letrasAlfabeto = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
     numero = random.randint(1, 99999);
@@ -18,7 +27,12 @@ def gerarCodigoDisciplina():
     return f"{letra}{numero}"
 
 
-def gerarCodigoTurma():
+def gerarCodigoTurma() -> str:
+    """_summary_
+
+    Returns:
+        str: Retorna um código gerado aleatoriamente
+    """    
     letrasAlfabeto = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
     numero = random.randint(1, 99999);

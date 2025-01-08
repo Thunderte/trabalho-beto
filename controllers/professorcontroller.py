@@ -4,6 +4,14 @@ from models.professor import criarUmProfessor, professoresDisponiveis, pesquisar
 import sqlite3
 
 def criarProfessor():
+    """_summary_
+    Cadastra um professor
+    Raises:
+        SystemError: Erro no sistema
+
+    Returns:
+        _type_: Retorna uma mensagem de sucesso
+    """    
     print('------------ INFORMAÇÕES PESSOAIS ------------')
     print('\n Bem vindo ao servidor de cadastro do IFMS \n')
 
@@ -64,6 +72,9 @@ def criarProfessor():
     return print(f"professor {nome} criado com sucesso! \n N° do código: {codigo}")
 
 def pesquisarProfessor():
+    """_summary_
+    Pesquisa um professor
+    """    
     print('------------ DISCIPLINAS ------------')
     print('\n Bem vindo ao servidor de cadastro de disciplinas \n')
 
@@ -83,6 +94,10 @@ def pesquisarProfessor():
         print("Professor nao encontrado.");
 
 def disciplinasDoProfessor():
+    """_summary_
+    Returns:
+        _type_: Retorna todas as disciplinas de um professor
+    """    
 
     professores = professoresDisponiveis()
 

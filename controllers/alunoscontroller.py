@@ -4,6 +4,14 @@ from models.aluno import criarUmAluno
 import sqlite3
 
 def criarAluno():
+    """_summary_
+
+    Raises:
+        SystemError: Erro no Sistema
+
+    Returns:
+        _type_: Retorna uma mensagem de sucesso
+    """    
     print('------------ INFORMAÇÕES PESSOAIS ------------')
     print('\n Bem vindo ao servidor de cadastro do IFMS \n')
 
@@ -61,9 +69,12 @@ def criarAluno():
     if not aluno:
         raise SystemError("Ops... Ocorreu um erro inesperado")
     
-    return f"Aluno {nome} criado com sucesso! \n N° da matricula: {matricula}"
+    return print(f"Aluno {nome} criado com sucesso! \n N° da matricula: {matricula}")
 
-def pesquisarAluno():
+def pesquisarAluno(): 
+    """_summary_
+    Pesquisa um aluno
+    """     
     print('------------ PESQUISAR ALUNO ------------')
     print('\n Bem vindo a Pesquisa de Alunos \n')
     nome = input("Digite o nome do aluno: ")

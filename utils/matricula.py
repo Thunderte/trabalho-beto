@@ -1,6 +1,11 @@
 import random
 
-def gerarMatricula():
+def gerarMatricula() -> str:
+    """_summary_
+
+    Returns:
+        str: Retorna uma matrícula gerada aleatoriamente
+    """      
 
     letrasAlfabeto = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 

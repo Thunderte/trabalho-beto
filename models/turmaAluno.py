@@ -1,6 +1,15 @@
 import sqlite3
 
 def matricularUmAlunoEmTurma(turma_id: int, aluno_id: int) -> str:
+    """_summary_
+
+    Args:
+        turma_id (int): Id da Turma
+        aluno_id (int): Id do Aluno
+
+    Returns:
+        str: Retorna uma mensagem de sucesso
+    """    
     conexao = sqlite3.connect("escola.db");
     
     conn = conexao.cursor()
@@ -14,6 +23,14 @@ def matricularUmAlunoEmTurma(turma_id: int, aluno_id: int) -> str:
     return f"Aluno matriculado com sucesso."
 
 def alunosMatriculadosEmUmaTurma(turma_id: int):
+    """_summary_
+
+    Args:
+        turma_id (int): Id da Turma
+
+    Returns:
+        _type_: Retorna uma mensagem com os alunos matriculados na turma
+    """    
     conexao = sqlite3.connect("escola.db");
     
     conn = conexao.cursor()

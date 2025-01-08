@@ -1,6 +1,17 @@
 import sqlite3
 
 def criarUmaDisciplina(nome: str, codigo: str, professor_id: int, carga_horaria: int) -> str:
+    """_summary_
+
+    Args:
+        nome (str): Nome da disciplina
+        codigo (str): Código da disciplina
+        professor_id (int): Id do professor
+        carga_horaria (int): Carga horária da disciplina
+
+    Returns:
+        str: Retorna uma mensagem de sucesso
+    """    
     conexao = sqlite3.connect("escola.db");
     
     conn = conexao.cursor()
@@ -25,6 +36,14 @@ def disciplinasDisponiveis():
     return disciplinas
 
 def pesquisarDisciplina(disciplina_id: int):
+    """_summary_
+
+    Args:
+        disciplina_id (int): Id da disciplina
+
+    Returns:
+        _type_: Retorna uma mensagem com os dados da disciplina encontrada
+    """    
     conexao = sqlite3.connect("escola.db");
     
     conn = conexao.cursor()

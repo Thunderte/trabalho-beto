@@ -4,9 +4,12 @@ from controllers.disciplinacontroller import criarDisciplina, pesquisarDisciplin
 from controllers.turmascontroller import criarTurma, matricularAlunoEmTurma, alunosMatriculadosEmTurma, cadastrarDisciplinaNaTurma, disciplinasCadastradasEmUmaTurma
 from database.main import criarBancoETabelas
 
-def dashboard():
+def dashboard(): 
+    """_summary_
+    Mostra todas as opções de administração
+    """    
     print('------------ DASHBOARD ------------')
-    print('\n Bem vindo ao servidor administrativo do IFMS \n')
+    print('\n Bem vindo ao servidor administrativo do IFMS \n OBS: SE FOR A SUA PRIMEIRA VEZ RODANDO TECLE O NÚMERO 0 PRIMEIRO PARA CRIAR AS TABELAS NO BANCO DE DADOS\n')
 
     while True:
         print('O que deseja fazer?\n')

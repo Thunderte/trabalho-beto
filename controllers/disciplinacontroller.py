@@ -5,6 +5,13 @@ from utils.codigo import gerarCodigoDisciplina
 import sqlite3
 
 def criarDisciplina():
+    """_summary_
+    Cria uma disciplina
+    Returns:
+      _type_: Retorna uma mensagem com os dados da disciplina criada
+    """    
+
+
     print('------------ DISCIPLINAS ------------')
     print('\n Bem vindo ao servidor de cadastro de disciplinas \n')
 
@@ -39,6 +46,9 @@ def criarDisciplina():
     return print(disciplina);
 
 def pesquisarDisciplina():
+    """_summary_
+    Pesquisa uma disciplina
+    """    
     print('------------ DISCIPLINAS ------------')
     print('\n Bem vindo a Pesquisa de Disciplinas \n')
 

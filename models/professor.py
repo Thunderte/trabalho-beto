@@ -1,6 +1,20 @@
 import sqlite3
 
 def criarUmProfessor(nome: str, codigo: str, data_nascimento: str, sexo: str, endereco: str, telefone: str, email: str) -> str:
+   """_summary_
+
+   Args:
+       nome (str): Nome do Professor
+       codigo (str): Código do Professor
+       data_nascimento (str): Data de Nascimento do Professor
+       sexo (str): Sexo do Professor
+       endereco (str): Endereço do Professor
+       telefone (str): Telefone do Professor
+       email (str): Email do Professor
+
+   Returns:
+       str: Retorna uma mensagem de sucesso
+   """
    conexao = sqlite3.connect("escola.db");
     
    conn = conexao.cursor()
@@ -25,6 +39,14 @@ def professoresDisponiveis() -> str:
    return professores
 
 def pesquisarUmProfessor(id: int) -> str:
+   """_summary_
+
+   Args:
+       id (int): Id do Professor
+
+   Returns:
+       str: Retorna uma mensagem com os dados do professor encontrado
+   """   
    conexao = sqlite3.connect("escola.db")
 
    conn = conexao.cursor()
@@ -41,6 +63,14 @@ def pesquisarUmProfessor(id: int) -> str:
    return professor
 
 def pesquisarDisciplinaDoProfessor(id: int) -> str:
+   """_summary_
+
+   Args:
+       id (int): Id do Professor
+
+   Returns:
+       str: Retorna uma mensagem com as disciplinas do professor encontrado
+   """   
    conexao = sqlite3.connect("escola.db")
 
    conn = conexao.cursor()

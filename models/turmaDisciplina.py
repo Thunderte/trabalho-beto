@@ -1,6 +1,15 @@
 import sqlite3
 
 def cadastrarDisciplinaEmTurma(turma_id: int, disciplina_id: int) -> str:
+    """_summary_
+
+    Args:
+        turma_id (int): Id da Turma
+        disciplina_id (int): Id da Disciplina
+
+    Returns:
+        str: Retorna uma mensagem de sucesso
+    """    
     conexao = sqlite3.connect("escola.db");
 
     conn = conexao.cursor()
@@ -14,6 +23,14 @@ def cadastrarDisciplinaEmTurma(turma_id: int, disciplina_id: int) -> str:
     return f"Disciplina cadastrada com sucesso na turma."
 
 def disciplinasEmUmaTurma(turma_id: int):
+    """_summary_
+
+    Args:
+        turma_id (int): Id da Turma
+
+    Returns:
+        _type_: Retorna uma mensagem com as disciplinas da turma
+    """    
     conexao = sqlite3.connect("escola.db");
 
     conn = conexao.cursor()

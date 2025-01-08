@@ -1,6 +1,9 @@
 import sqlite3
 
 def criarBancoETabelas():
+   """_summary_
+   Cria o banco de dados e as tabelas
+   """   
    conexao = sqlite3.connect("escola.db");
    
    conn = conexao.cursor()

@@ -1,4 +1,15 @@
 def formartarTelefone(telefone: str) -> str:
+    """_summary_
+
+    Args:
+        telefone (str): Telefone não formatado
+
+    Raises:
+        ValueError: Telefone inválido
+
+    Returns:
+        str: Retorna o telefone formatado
+    """    
     tamanho = len(telefone)
 
     if tamanho == 10:

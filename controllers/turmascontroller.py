@@ -6,6 +6,11 @@ from models.disciplina import disciplinasDisponiveis, pesquisarDisciplina
 from models.turmaDisciplina import cadastrarDisciplinaEmTurma, disciplinasEmUmaTurma
 
 def criarTurma():
+    """_summary_
+    Cadastra uma turma
+    Returns:
+        _type_: Retorna uma mensagem de sucesso
+    """    
     print('------------ TURMAS ------------')
     print('\n Bem vindo ao servidor de cadastro de turmas \n')
 
@@ -18,6 +23,11 @@ def criarTurma():
     return print(f"Turma {nome} cadastrada com sucesso.\n N° codigo: {codigo}");
 
 def matricularAlunoEmTurma():
+    """_summary_
+    Matricula um aluno em uma turma
+    Returns:
+        _type_: Retorna uma mensagem de sucesso
+    """    
     print('------------ MATRICULAS ------------')
     print('\n Bem vindo ao servidor de matricula de alunos \n')
 
@@ -53,6 +63,11 @@ def matricularAlunoEmTurma():
 
 
 def alunosMatriculadosEmTurma():
+    """_summary_
+    Mostra os alunos matriculados em uma turma
+    Returns:
+        _type_: Retorna uma mensagem com os alunos matriculados em uma turma
+    """    
     turmas = turmasDisponiveis()
 
     for i in range(0, len(turmas)):
@@ -78,6 +93,11 @@ def alunosMatriculadosEmTurma():
     return print(f"Alunos matriculados na turma {turmaPesquisada[1]}.\n");
 
 def cadastrarDisciplinaNaTurma():
+    """_summary_
+    Cadastra uma disciplina em uma turma
+    Returns:
+        _type_: Retorna uma mensagem de sucesso
+    """    
     print('------------ DISCIPLINAS ------------')
     print('\n Bem vindo ao servidor de cadastro de disciplinas em turmas \n')
 
@@ -113,6 +133,11 @@ def cadastrarDisciplinaNaTurma():
 
 
 def disciplinasCadastradasEmUmaTurma():
+    """_summary_
+    Mostra as disciplinas cadastradas em uma turma
+    Returns:
+        _type_: Retorna uma mensagem com as disciplinas cadastradas em uma turma
+    """    
     turmas = turmasDisponiveis()
 
     for i in range(0, len(turmas)):
